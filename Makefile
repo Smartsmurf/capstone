@@ -303,6 +303,7 @@ IS_CYGWIN := $(shell $(CC) -dumpmachine 2>/dev/null | grep -i cygwin | wc -l)
 ifeq ($(IS_CYGWIN),1)
 EXT = dll
 AR_EXT = lib
+VERSION_EXT = $(EXT)
 # Cygwin doesn't like -fPIC
 CFLAGS := $(CFLAGS:-fPIC=)
 # On Windows we need the shared library to be executable
